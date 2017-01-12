@@ -1,4 +1,4 @@
-let data = [
+let data = [ //データは配列で書く
   coordinate("コーデ1",
     ["学校", "冬", "雨", "赤", "寒い"],
     "images/001.jpg"),
@@ -16,7 +16,7 @@ let data = [
     "images/005.jpg"),
 ];
 
-function coordinate(title, tag, image) {
+function coordinate(title, tag, image) { //それぞれに名前をつける
   return {
     title: title,
     tag: tag,
@@ -24,7 +24,7 @@ function coordinate(title, tag, image) {
   };
 }
 
-function contains(tag, tagList){
+function contains(tag, tagList){ //タグが一つしかないので、スペースで区切られたタグをどうやって文字列から配列にするか
   let i = 0;
   while(i < tagList.length){
     if(tagList[i] == tag){
@@ -48,7 +48,7 @@ function li(children){
   return li;
 }
 
-function img(url){
+function img(url){ //
   let i = document.createElement("img");
   i.src = url;
   return i;
@@ -60,41 +60,46 @@ function span(text){
   return s;
 }
 
-function searchResult(title, image){
+function searchResult(title, image){ //データのタイトルとデータをもらってリスト(表示場所)に返す
   let pict = img(image);
   let t = span(title);  
   return li([pict, t])
 }
 
-function addReslut(item){
+function addReslut(item){ //検索結果を表示
   let list = document.querySelector("#result");
-  let result = searchResult(item.title, item.image);
-  list.appendChild(result);
+  let result = searchResult(item.title, item.image);　
+  list.appendChild(result); //対象リストの子要素にする
 }
 
-function doSearch(tag){
+function doSearch(tag){ //検索を行う　タグ…与えられた検索条件
   let i = 0;
-  while(i < data.length){
+  while(i < data.length){ //前から見ていくよ
     let item = data[i];
-    if(contains(tag, item.tag)){
-      addReslut(item);
+    if(contains(tag, item.tag)){ //検索されたタグのあるアイテムがあれば //contains…結果に合っているかどうか、タグが条件位含まれているかの判断
+      addReslut(item); //結果についか //addResult…画面に出力
     }
-    i = i + 1;
+    i = i + 1; //なければ次に行く
   }
 }
 
-function clearSearchResult(){
+function clearSearchResult(){　//ここで検索前に前の検索結果をリセットする
 }
 
 function beforeSearch(){
-  clearSearchResult();
+  clearSearchResult(); //ここで検索前に前の検索結果をリセットする
 }
 
-function afterSearch(){
+function afterSearch(){ //ここで検索後の処理を行う
 }
 
-function search(){
-  let tagInput = document.querySelector("#tag");
+function search(){ //検索を行う
+  let tagInput = document.querySelector("#tag"); //HTMLの中に入力されたタグを引っ張ってくる
+　/*str = tagInput; //ここでタグの配列化をやるのだろうか？やってみたが失敗した
+  any = str.split(',');
+  let tagKugiri = console.log(any);
+  let tag = tagKugiri.value;
+  */
   let tag = tagInput.value;
   console.log(`input: ${tag}`);
   beforeSearch();
@@ -102,9 +107,9 @@ function search(){
   afterSearch();
 }
 
-function start(){
-  let button = document.querySelector("#search");
-  button.addEventListener("click", search);
+function start(){ //最初にやること
+  let button = document.querySelector("#search"); 
+  button.addEventListener("click", search); //ボタンがクリックされたら検索をはじめる
 }
 
 start();

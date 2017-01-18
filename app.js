@@ -1,6 +1,6 @@
 let data = [
   coordinate("コーデ1",
-    ["学校”, "赤"],
+    ["学校", "赤"],
     "images/001.jpg"),
   coordinate("コーデ2",
     [],
@@ -15,6 +15,11 @@ let data = [
     ["学校", "冬", "雨", "緑", "寒い"],
     "images/005.jpg"),
 ];
+
+function reset(){
+  location.reload();
+}
+
 
 function coordinate(title, tag, image) {
   return {

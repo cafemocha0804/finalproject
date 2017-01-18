@@ -1,4 +1,4 @@
-<!doctype html>
+<!--doctype html-->
 <html>
   <head>
     <title>コーデをきめるなにがし</title>
@@ -7,9 +7,9 @@
   <body>
     <div>    
       <label for="tag">タグ</label>
-      <input id="tag" placeholder="タグを入力してください">
+      <input type="text" value="ここにタグを入力してください" id="tag">
       <button id="search">検索</button>
-    
+      <button onclick="reset()">リセット</button>
     </div>
     <ul id="result">
     </ul>

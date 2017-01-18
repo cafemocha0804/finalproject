@@ -1,9 +1,9 @@
 let data = [
   coordinate("コーデ1",
-    ["学校", "冬", "雨", "赤", "寒い"],
+    ["学校”, "赤"],
     "images/001.jpg"),
   coordinate("コーデ2",
-    ["学校", "秋", "雨"],
+    [],
     "images/002.jpg"),
   coordinate("コーデ3",
     ["学校", "秋", "雨"],
@@ -106,5 +106,6 @@ function start(){
   let button = document.querySelector("#search");
   button.addEventListener("click", search);
 }
+
 
 start();

@@ -16,11 +16,22 @@ let data = [
     "images/005.jpg"),
 ];
 
+
+
+function rain(){
+  return　doSearch("雨");
+}
+
+function school(){
+  return　doSearch("学校");
+}
+
 function reset(){
   let tagInput = document.querySelector("#tag");
   tagInput.value = "";
   location.reload();
 }
+
 
 
 function coordinate(title, tag, image) {

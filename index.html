@@ -1,18 +1,32 @@
 <!--doctype html-->
 <html>
+
   <head>
     <title>今日のコーデは・・・？</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="index.css">
   </head>
-  <body>
-    <div>    
+
+  <body> 
+    <div class=main>   
+      <p>
       <label for="tag">タグを入力してください</label>
+      <br>
       <input type="text" value="ここにタグを入力してください" id="tag">
       <button id="search">検索</button>
       <button onclick="reset()">リセット</button>
+      <br>
+      ワード：学校　雨　冬　秋
+      </p>
+      <label for="item">よく使う項目</label>
+      <br>
+      <button onclick="school()" class="button1">学校</button>
+      <button onclick="rain()" class="button2">雨</button>
     </div>
+    <div class=main>
     <ul id="result">
     </ul>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>

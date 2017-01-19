@@ -1,0 +1,27 @@
+html {
+    background:#fafad2;
+}
+
+
+body {
+    color: #2e8b57;
+}
+
+
+.main {  
+    text-align: center;  
+} 
+
+
+.button1{
+    background-color: #ffb6c1;
+    color: #fff;
+    border-style: none;
+}
+
+
+.button2{
+    background-color: #87cefa;
+    color: #fff;
+    border-style: none;
+}

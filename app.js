@@ -3,7 +3,7 @@ let data = [
     ["学校", "赤"],
     "images/001.jpg"),
   coordinate("コーデ2",
-    [],
+    ["雨"],
     "images/002.jpg"),
   coordinate("コーデ3",
     ["学校", "秋", "雨"],
@@ -17,6 +17,8 @@ let data = [
 ];
 
 function reset(){
+  let tagInput = document.querySelector("#tag");
+  tagInput.value = "";
   location.reload();
 }
 

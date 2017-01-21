@@ -66,12 +66,6 @@ function searchResult(title, image){ //データのタイトルとデータを�
   return li([pict, t])
 }
 
-function addReslut(item){ //検索結果を表示
-  let list = document.querySelector("#result");
-  let result = searchResult(item.title, item.image);　
-  list.appendChild(result); //対象リストの子要素にする
-}
-
 function doSearch(tag){ //検索を行う　タグ…与えられた検索条件
   let i = 0;
   while(i < data.length){ //前から見ていくよ
@@ -81,6 +75,12 @@ function doSearch(tag){ //検索を行う　タグ…与えられた検索条件
     }
     i = i + 1; //なければ次に行く
   }
+} 
+
+function addReslut(item){ //検索結果を表示
+  let list = document.querySelector("#result");
+  let result = searchResult(item.title, item.image);　
+  list.appendChild(result); //対象リストの子要素にする
 }
 
 function clearSearchResult(){　//ここで検索前に前の検索結果をリセットする
@@ -95,11 +95,6 @@ function afterSearch(){ //ここで検索後の処理を行う
 
 function search(){ //検索を行う
   let tagInput = document.querySelector("#tag"); //HTMLの中に入力されたタグを引っ張ってくる
-　/*str = tagInput; //ここでタグの配列化をやるのだろうか？やってみたが失敗した
-  any = str.split(',');
-  let tagKugiri = console.log(any);
-  let tag = tagKugiri.value;
-  */
   let tag = tagInput.value;
   console.log(`input: ${tag}`);
   beforeSearch();

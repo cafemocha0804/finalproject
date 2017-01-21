@@ -66,16 +66,35 @@ function searchResult(title, image){ //データのタイトルとデータを�
   return li([pict, t])
 }
 
-function doSearch(tag){ //検索を行う　タグ…与えられた検索条件
+function doSearch(tag) { //複数検索するよ
+  var words = tag.split("　"); //文字列を区切って配列にするよ
   let i = 0;
-  while(i < data.length){ //前から見ていくよ
+  while (i < data.length) { //前から見ていくよ
     let item = data[i];
-    if(contains(tag, item.tag)){ //検索されたタグのあるアイテムがあれば //contains…結果に合っているかどうか、タグが条件位含まれているかの判断
-      addReslut(item); //結果についか //addResult…画面に出力
+    console.log(words);
+    let matched = words.map(word => contains(word, item.tag))
+      .reduce((a, b) => a && b);
+    if(matched){
+      addReslut(item);
     }
-    i = i + 1; //なければ次に行く
+    /*
+  for(word of words){ //配列の中の文字列を延々検証する
+      if(!contains(word,item.tag)){ //全部含まないにすると含まないものだけが表示される
+        //delet();
+        //addReslut(item);
+        //return; ここでreturnを入れると最初に引っかかったやつだけの表示になる
+
+      }else{
+        addReslut(item);
+      }
   }
-} 
+  
+  //return; //ここに入れると何も起こらない
+  */
+  i = i + 1;
+  }
+} //「タグを含む回数」分写真が表示されてるよ 多分一単語ずつaddResultが動いてるからだよ
+
 
 function addReslut(item){ //検索結果を表示
   let list = document.querySelector("#result");

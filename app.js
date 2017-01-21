@@ -1,25 +1,46 @@
 let data = [
   coordinate("コーデ1",
-    ["学校", "赤"],
+    ["学校", "女子会", "デート",　"スカート", "冬"],
     "images/001.jpg"),
   coordinate("コーデ2",
-    ["雨"],
+    ["学校", "女子会", "ガウチョ","モノクロ", "秋", "冬" ],
     "images/002.jpg"),
   coordinate("コーデ3",
-    ["学校", "秋", "雨"],
+    ["学校", "女子会", "ワンピース", "秋", "冬"],
     "images/003.jpg"),
   coordinate("コーデ4",
-    ["学校", "冬", "雨"],
+    ["デート", "スカート", "冬"],
     "images/004.jpg"),
   coordinate("コーデ5",
-    ["学校", "冬", "雨", "緑", "寒い"],
+    ["学校", "夏", "ショートパンツ"],
     "images/005.jpg"),
+  coordinate("コーデ6",
+    ["デート","ワンピース", "帽子", "夏"],
+    "images/006.jpg"),
+  coordinate("コーデ7",
+    ["学校", "夏", "ショートパンツ","ボーダー"],
+    "images/007.jpg"),
+  coordinate("コーデ8",
+    ["デート", "春", "花柄","スカート"],
+    "images/008.jpg"),
+  coordinate("コーデ9",
+    ["学校", "秋", "スカート", "春"],
+    "images/009.jpg"),
+  coordinate("コーデ10",
+    ["学校", "春", "女子会", "ワンピース",　"花柄",　"デート", ],
+    "images/010.jpg"),
 ];
 
+function skirt(){
+  return　doSearch("スカート");
+}
 
+function dress(){
+  return　doSearch("ワンピース");
+}
 
-function rain(){
-  return　doSearch("雨");
+function shorts(){
+  return　doSearch("ショートパンツ");
 }
 
 function school(){
